@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--very-light-gray);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+h2,
+h3 {
+  color: var(--very-dark-blue);
+}
+p {
+  color: var(--grayish-blue);
+}
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+header {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+header h2.thin {
+  font-weight: 200;
+}
+header p {
+  padding: 1rem 0 2rem;
+  font-weight: 200;
+}
+main {
+  padding: 2rem 0 0;
+  display: grid;
+}
+article {
+  border-top: 3px solid;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 0.8rem 0;
+  padding: 1.2rem 1.5rem;
+}
+article:nth-child(1) {
+  border-color: var(--cyan);
+  margin-top: 0;
+}
+article:nth-child(2) {
+  border-color: var(--red);
+}
+article:nth-child(3) {
+  border-color: var(--orange);
+}
+article:nth-child(4) {
+  border-color: var(--blue);
+  margin-bottom: 0;
+}
+article h3 {
+  padding-bottom: 0.8rem;
+}
+article p {
+  font-size: 13px;
+  font-weight: 200;
+}
+article img {
+  padding-top: 2rem;
+  height: 80px;
+  float: right;
+}
+footer {
+    padding: 1rem 0 2rem;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap: 1.5rem;
+        justify-items: center;
+        align-items: center;
+    }
+    article {
+        width: 90%;
+        height: 95%;
+        margin: 0;
+        padding-bottom: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 90%;
+    }
+  main {
+    grid-template-areas:
+      "a b c"
+      "a d c";
+    height: 55vh;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
+  }
+  article {
+    min-width: 260px;
+    max-width: 320px;
+    margin: 0;
+    padding: 1.5rem 2rem;
+  }
+  article:nth-child(1) {
+    grid-area: a;
+  }
+  article:nth-child(2) {
+    grid-area: b;
+  }
+  article:nth-child(3) {
+    grid-area: d;
+  }
+  article:nth-child(4) {
+    grid-area: c;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
